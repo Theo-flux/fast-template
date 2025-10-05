@@ -5,9 +5,9 @@ from fastapi import UploadFile
 from fastapi_mail import ConnectionConfig, FastMail, MessageSchema, MessageType
 from pydantic import EmailStr
 
-from src.auth.authentication import Authentication
-from src.config import Config
 from src.misc.schemas import EmailTypes
+
+from .config import Config
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 
@@ -15,11 +15,10 @@ mail_config = ConnectionConfig(
     MAIL_USERNAME=Config.MAIL_USERNAME,
     MAIL_PASSWORD=Config.MAIL_PASSWORD,
     MAIL_FROM=Config.MAIL_FROM,
-    MAIL_PORT=Config.MAIL_PORT,
+    MAIL_PORT=int(Config.MAIL_PORT),
     MAIL_SERVER=Config.MAIL_SERVER,
-    MAIL_FROM_NAME=Config.MAIL_FROM_NAME,
-    MAIL_STARTTLS=False,
-    MAIL_SSL_TLS=True,
+    MAIL_STARTTLS=Config.MAIL_STARTTLS in [True, "True", "true", 1, "1"],
+    MAIL_SSL_TLS=Config.MAIL_SSL_TLS in [True, "True", "true", 1, "1"],
     USE_CREDENTIALS=True,
     VALIDATE_CERTS=True,
     TEMPLATE_FOLDER=Path(ROOT_DIR, "templates"),
@@ -70,11 +69,7 @@ class Mailer:
         return message
 
     @staticmethod
-    async def send_email_verification(email: str, first_name: str, base_url: str):
-        token_payload = {"email": email}
-        email_token = Authentication.create_url_safe_token(token_payload)
-        verification_url = f"{base_url}api/v1/auth/verify/{email_token}"
-
+    async def send_email_verification(email: str, first_name: str, verification_url: str):
         message = Mailer._create_message(
             recipients=[email],
             subject=EmailTypes.EMAIL_VERIFICATION.subject,
@@ -84,11 +79,7 @@ class Mailer:
         await Mailer.mail.send_message(message=message, template_name=EmailTypes.EMAIL_VERIFICATION.template)
 
     @staticmethod
-    async def send_password_reset(email: str, first_name: str, base_url: str):
-        token_payload = {"email": email}
-        email_token = Authentication.create_url_safe_token(token_payload)
-        reset_url = f"{base_url}api/v1/auth/pwd-reset/{email_token}"
-
+    async def send_password_reset(email: str, first_name: str, reset_url: str):
         message = Mailer._create_message(
             recipients=[email],
             subject=EmailTypes.PWD_RESET.subject,

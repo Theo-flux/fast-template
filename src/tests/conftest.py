@@ -3,8 +3,8 @@ from unittest.mock import Mock
 import pytest
 from fastapi.testclient import TestClient
 
-from src import app
-from src.db.main import get_session
+from src.db.base import get_session
+from src.main import app
 
 mock_session: Mock = Mock()
 mock_auth_service: Mock = Mock()
