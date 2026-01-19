@@ -2,16 +2,16 @@
 A production-ready FastAPI template with a clean, scalable architecture. This template includes authentication, database migrations, Redis caching, email functionality, and comprehensive error handling out of the box.
 
 ## Features
-✨ Modern FastAPI - Built with FastAPI for high performance async APIs
-🔐 Authentication Ready - Pre-configured auth system with security utilities
-🗄️ Database Integration - SQLAlchemy ORM with Alembic migrations
-⚡ Redis Support - Built-in Redis integration for caching and sessions
-📧 Email System - Template-based email sending capabilities
-🛡️ Middleware Stack - Custom middlewares for logging, CORS, and error handling
-📝 Structured Logging - Centralized logging configuration
-✅ Validation Utilities - Reusable validators and schemas
-🎨 Template System - Jinja2 template registry for emails and rendering
-⚙️ Environment Config - Centralized configuration management
+* ✨ Modern FastAPI - Built with FastAPI for high performance async APIs
+* 🔐 Authentication Ready - Pre-configured auth system with security utilities
+* 🗄️ Database Integration - SQLAlchemy ORM with Alembic migrations
+* ⚡ Redis Support - Built-in Redis integration for caching and sessions
+* 📧 Email System - Template-based email sending capabilities
+* 🛡️ Middleware Stack - Custom middlewares for logging, CORS, and error handling
+* 📝 Structured Logging - Centralized logging configuration
+* ✅ Validation Utilities - Reusable validators and schemas
+* 🎨 Template System - Jinja2 template registry for emails and rendering
+* ⚙️ Environment Config - Centralized configuration management
 
 ## Project Structure
 ```
@@ -49,7 +49,7 @@ A production-ready FastAPI template with a clean, scalable architecture. This te
 ├── alembic.ini                # Alembic configuration
 ├── pyproject.toml             # Python project metadata
 └── requirements.txt           # Python dependencies
-
+```
 
 # Getting Started
 ## Prerequisites
@@ -58,9 +58,10 @@ A production-ready FastAPI template with a clean, scalable architecture. This te
 - PostgreSQL (or your preferred SQL database)
 - Redis (optional, for caching)
 
-Installation
+## Installation
 
-Clone the repository
+### Clone the repository
 ```
 git clone https://github.com/Theo-flux/fast-template.git
 cd fast-template
+```
