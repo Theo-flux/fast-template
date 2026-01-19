@@ -1,0 +1,69 @@
+.
+├── README.md
+├── alembic
+│   ├── README
+│   ├── env.py
+│   ├── script.py.mako
+│   └── versions
+├── alembic.ini
+├── app
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   └── main.cpython-313.pyc
+│   ├── core
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-313.pyc
+│   │   │   ├── config.cpython-313.pyc
+│   │   │   ├── exceptions.cpython-313.pyc
+│   │   │   ├── logger.cpython-313.pyc
+│   │   │   └── middlewares.cpython-313.pyc
+│   │   ├── authentication.py
+│   │   ├── config.py
+│   │   ├── exceptions.py
+│   │   ├── logger.py
+│   │   ├── mail.py
+│   │   ├── middlewares.py
+│   │   ├── security.py
+│   │   └── template_registry.py
+│   ├── database
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-313.pyc
+│   │   │   ├── base.cpython-313.pyc
+│   │   │   └── redis.cpython-313.pyc
+│   │   ├── base.py
+│   │   ├── models
+│   │   │   └── __init__.py
+│   │   └── redis.py
+│   ├── main.py
+│   ├── schemas
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-313.pyc
+│   │   │   └── base.cpython-313.pyc
+│   │   ├── auth.py
+│   │   ├── base.py
+│   │   └── mail.py
+│   ├── templates
+│   │   ├── __init__.py
+│   │   └── context.py
+│   └── utils
+│       ├── __init__.py
+│       ├── __pycache__
+│       │   ├── __init__.cpython-313.pyc
+│       │   └── validators.cpython-313.pyc
+│       └── validators.py
+├── migrations
+│   ├── README
+│   ├── __pycache__
+│   │   └── env.cpython-313.pyc
+│   ├── env.py
+│   ├── script.py.mako
+│   └── versions
+├── pyproject.toml
+├── requirements.txt
+└── structure.txt
+
+18 directories, 49 files
